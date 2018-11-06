@@ -7,21 +7,21 @@ RUN apk add --update --no-cache \
      unzip \
      wget
 
-RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip
-#COPY stanford-corenlp-full-2017-06-09.zip /
+RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip
+#COPY stanford-corenlp-full-2018-10-05.zip /
 
-RUN unzip stanford-corenlp-full-2017-06-09.zip && \
-    rm stanford-corenlp-full-2017-06-09.zip
+RUN unzip stanford-corenlp-full-2018-10-05.zip && \
+    rm stanford-corenlp-full-2018-10-05.zip
 
-WORKDIR /stanford-corenlp-full-2017-06-09/models/ner/
+WORKDIR /stanford-corenlp-full-2018-10-05/models/ner/
 COPY bgs.3class.geo.crf.ser.gz .
 
-WORKDIR /stanford-corenlp-full-2017-06-09
+WORKDIR /stanford-corenlp-full-2018-10-05
 
 COPY server.properties .
 
 # English model referred to in server.properties is in this jar
-RUN unzip stanford-corenlp-3.8.0-models.jar
+RUN unzip stanford-corenlp-3.9.2-models.jar
 
 RUN export CLASSPATH="`find . -name '*.jar'`:.*"
 
