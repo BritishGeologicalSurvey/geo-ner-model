@@ -21,26 +21,28 @@ Instructions and link to download the current library to train a model are at ht
 
 ## Training
 
-1. Train the NER model:
+### Train the NER model:
 
-    - wget http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip ; unzip stanford-corenlp-full-2017-06-09.zip
+  * `wget http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip ; unzip stanford-corenlp-full-2018-10-05.zip`
 
-   - Edit 'bgs.3class.geo.prop' if needed to point 'trainFile' to the training file and 'gazette' to file specifying entity names (vocab.gaz.txt). Use of gazetter made very minimal impact in our testing (slightly improved for CHRONOSTRAT and worsened for LEXICON).
-   - Execute command:
+  * Edit `bgs.3class.geo.prop` if needed to point `trainFile` to the training file and `gazette` to file specifying entity names (vocab.gaz.txt). Use of gazetter made very minimal impact in our testing (slightly improved for CHRONOSTRAT and worsened for LEXICON).
 
-	java -cp stanford-corenlp-full-2017-06-09/stanford-corenlp-3.8.0.jar edu.stanford.nlp.ie.crf.CRFClassifier -prop bgs.3class.geo.prop
-	
-2. Test a model: Testing gives precision, recall and f-measure scores.
-   - Execute command
-   
-	java -cp stanford-corenlp-full-2017-06-09/stanford-corenlp-3.8.0.jar edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier [ner_model] -testFile bgs.3class.geo-testing-data.txt
+  *	Train the model: `java -cp stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2.jar edu.stanford.nlp.ie.crf.CRFClassifier -prop bgs.3class.geo.prop`
 
-	
-## Evaluation
+  * The default `bgs.3class.geo.prop` we have supplied here includes both the training and testing data for the CoreNLP model (combined into `bgs.3class.geo-all-data.txt`)
+
+### Test the NER  model
+
+Testing gives precision, recall and f-measure scores.
+
+  * `java -cp stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2.jar edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier bgs.3class.geo.crf.ser.gz -testFile bgs.3class.geo-testing-data.txt`
+
+### Model Evaluation
 
 Performance results obtained using the training, testing and properties files specified here are as follows.
 
-Entity    		Precision	Recall     	F1  		TP  	FP   	FN
-CHRONOSTRAT    	0.9722  	1.0000  	0.9859  	70      2       0
-LEXICON    		0.8794  	0.8753  	0.8774  	372     51      53
-Totals    		0.8929  	0.8929  	0.8929  	442     53      53
+|Entity    		|Precision	|Recall     	|F1  		|TP  	|FP   	|FN |
+|---------------|-----------|---------------|-----------|-------|-------|---|
+|CHRONOSTRAT    	|0.9722  	|1.0000  	|0.9859  	|70      |2      | 0|
+|LEXICON    		|0.8794  	|0.8753  	|0.8774  	372     |51      |53|
+|Totals    		|0.8929  	|0.8929  	|0.8929  	|442     |53      |53|
