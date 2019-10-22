@@ -67,7 +67,7 @@ Contributors to this project, as part of the broader Geosemantics efforts within
  * Rachel Heaven
  * Robert McIntosh
  * Jo Walsh
- * Robert
+ * Simon Burden
  * James Passmore
  * Marcus Sen
 
