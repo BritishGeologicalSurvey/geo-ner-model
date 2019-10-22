@@ -6,7 +6,7 @@ This project provides training data and instructions for building a model to do 
 
 We include around 2500 sentences extracted from publications of the British Geological Survey, with technical terms from BGS Geochronostratigraphy vocabulary and its Lexicon of Named Rock Units annotated with a custom named entity type (`CHRONOSTRAT` and `LEXICON` respectively).
 
-The dataset was prepared during a Doctoral Training Programme with BGS by Dr Ike N'kisi Orji, supervised by Rachel Heaven. The labelled sentences were extracted from an earlier collection of annotated publications known as Textbase 2000. The model has been used in text mining the BGS archives and linking documents and metadata to entities in the BGS Linked Data vocabularies.
+The dataset was prepared by Dr Ike N'kisi Orji, supervised in BGS by Rachel Heaven, during his Doctoral Training Programme co-funded by BGS (BGS University Funding Initiative no. S291) and Robert Gordon University (School of Computing Science and Digital Media). The labelled sentences were extracted from an earlier collection of annotated publications known as Textbase 2000. The model has been used in text mining the BGS archives and linking documents and metadata to entities in the BGS Linked Data vocabularies.
 
 ## Building the model
 
@@ -76,7 +76,7 @@ We welcome any contributions, including improvements to the annotations training
 ## Licence
 
 The contents of this repository are made available under the [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/) license.
-
+Copyright ©BGS/Robert Gordon University 2018
 
 ## References
 
