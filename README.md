@@ -8,6 +8,8 @@ We include around 2500 sentences extracted from publications of the British Geol
 
 The dataset was prepared by Dr Ike N'kisi Orji, supervised in BGS by Rachel Heaven, during his Doctoral Training Programme co-funded by BGS (BGS University Funding Initiative no. S291) and Robert Gordon University (School of Computing Science and Digital Media). The labelled sentences were extracted from an earlier collection of annotated publications known at the time as Textbase, and now referred to as Textbase 2000. The model has been used in text mining the BGS archives and linking documents and metadata to entities in the [BGS Linked Data](https://data.bgs.ac.uk) vocabularies.
 
+![Example of CoreNLP interface with our custom model](nlp_with_vocab_v1.PNG)
+
 ## Running in docker
 
 We provide a Dockerfile to build and run CoreNLP Server including the custom NER model. You can also (currently) pull a docker image from the Github Container Registry - [Custom CoreNLP docker image](https://github.com/BritishGeologicalSurvey/geo-ner-model/packages/476199). The following will pull down the image and run CoreNLP Server in the background, on port 9000.
