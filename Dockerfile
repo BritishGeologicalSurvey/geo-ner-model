@@ -28,4 +28,4 @@ RUN export CLASSPATH="`find . -name '*.jar'`:.*"
 EXPOSE 9000
 
 # Add our models into the container and to the classpath
-CMD java -cp "*" -mx4g edu.stanford.nlp.pipeline.StanfordCoreNLPServer -serverProperties server.properties -loadClassifier models/ner/bgs.3class.geo.crf.ser.gz
+CMD java -cp "*" -mx4g edu.stanford.nlp.pipeline.StanfordCoreNLPServer -serverProperties server.properties -loadClassifier bgs.3class.geo.crf.ser.gz
