@@ -12,7 +12,19 @@ The dataset was prepared by Dr Ike N'kisi Orji, supervised in BGS by Rachel Heav
 
 ## Running in docker
 
-We provide a Dockerfile to build and run CoreNLP Server including the custom NER model. You can also (currently) pull a docker image from the Github Container Registry - [Custom CoreNLP docker image](https://github.com/BritishGeologicalSurvey/geo-ner-model/packages/476199). The following will pull down the image and run CoreNLP Server in the background, on port 9000.
+We provide a Dockerfile to build and run CoreNLP Server including the custom NER model. You can also (currently) pull a docker image from the Github Container Registry - [Custom CoreNLP docker image](https://github.com/BritishGeologicalSurvey/geo-ner-model/packages/476199). As of writing, the Github registry requires authentication with a Personal Access Token - please see [authenticating with the Github Container Registry](https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry/migrating-to-github-container-registry-for-docker-images#authenticating-with-the-container-registry) for detail; the short version is this:
+
+* [Create a Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) with rights to `read:packages`; once logged in, start at [Developer Settings/Tokens](https://github.com/settings/tokens)
+
+* Use the personal access token to `docker login` before pulling down the image:
+```
+ export CR_PAT=YOUR_TOKEN
+ echo $CR_PAT | docker login docker.pkg.github.com -u USERNAME --password-stdin
+ ...
+ docker pull docker.pkg.github.com/britishgeologicalsurvey/geo-ner-model/corenlp:v0.3
+```
+
+The following will pull down the image if not present, and run CoreNLP Server in the background, on port 9000.
 
 ```
 docker run -d -p 9000:9000 docker.pkg.github.com/britishgeologicalsurvey/geo-ner-model/corenlp:v0.3
