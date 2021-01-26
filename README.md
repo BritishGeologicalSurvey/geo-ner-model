@@ -1,4 +1,4 @@
-# Stratigraphic Named Entity Recognition with Stanford CoreNLP
+# Stratigraphic Named Entity Recognition with Stanford CoreNLP [![DOI](https://zenodo.org/badge/216852623.svg)](https://zenodo.org/badge/latestdoi/216852623)
 
 ## Introduction
 
