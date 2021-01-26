@@ -29,6 +29,10 @@ The following will pull down the image if not present, and run CoreNLP Server in
 ```
 docker run -d -p 9000:9000 docker.pkg.github.com/britishgeologicalsurvey/geo-ner-model/corenlp:v0.3
 ```
+Alternatively use `docker-compose` with the config file provided in this repository to do the same:
+```
+docker-composse up -d
+```
 
 The first query to the server is often slow while it loads the models, and subsequent queries should be much faster.
 
