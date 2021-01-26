@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  corenlp:
+    image: docker.pkg.github.com/britishgeologicalsurvey/geo-ner-model/corenlp:v0.3
+    ports:
+      - 9000:9000
+    restart: unless-stopped
